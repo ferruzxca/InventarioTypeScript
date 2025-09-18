@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventario</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Inventario</h1>
+    <div class="stats">
+      <div class="kpi"><div class="kpi-label">Items</div><div id="kpi-items" class="kpi-val">0</div></div>
+      <div class="kpi"><div class="kpi-label">Unidades</div><div id="kpi-unidades" class="kpi-val">0</div></div>
+      <div class="kpi"><div class="kpi-label">Valor</div><div id="kpi-valor" class="kpi-val">$0</div></div>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2>Registrar</h2>
+      <form id="form" class="form">
+        <div class="col">
+          <label for="id">ID</label>
+          <input id="id" type="number" min="1" step="1" required>
+        </div>
+        <div class="col">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" type="text" required>
+        </div>
+        <div class="col">
+          <label for="cantidad">Cantidad</label>
+          <input id="cantidad" type="number" step="1" required>
+        </div>
+        <div class="col">
+          <label for="precio">Precio</label>
+          <input id="precio" type="number" step="0.01">
+        </div>
+        <div class="col">
+          <label for="categoria">Categoría</label>
+          <input id="categoria" type="text">
+        </div>
+        <div class="row">
+          <button id="crear" type="button">Crear/Sumar</button>
+          <button id="actualizar" type="button">Actualizar</button>
+          <button id="limpiar" type="reset">Limpiar</button>
+        </div>
+        <div id="msg"></div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Listado</h2>
+      <div class="toolbar">
+        <input id="buscar" type="search" placeholder="Buscar por nombre o categoría">
+        <select id="orden">
+          <option value="id">ID</option>
+          <option value="nombre">Nombre</option>
+          <option value="cantidad">Cantidad</option>
+          <option value="precio">Precio</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Nombre</th><th>Cant.</th><th>Precio</th><th>Categoría</th><th>Total</th><th>Acciones</th></tr>
+          </thead>
+          <tbody id="lista"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">Ferruzca Práctica 4 </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

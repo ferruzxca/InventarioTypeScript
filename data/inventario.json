@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "nombre": "iMac",
+    "cantidad": 2050,
+    "precio": 1000,
+    "categoria": "Apple"
+  },
+  {
+    "id": 2,
+    "nombre": "iPhone",
+    "cantidad": 500,
+    "precio": 15000,
+    "categoria": "Apple"
+  }
+]

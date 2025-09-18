@@ -1,0 +1,221 @@
+:root {
+  --bg: #0d0b14;
+  --panel: #141125;
+  --panel-2: #11102a;
+  --stroke: #26214a;
+  --text: #e7e6ff;
+  --muted: #a9a6d6;
+  --accent: #6c4dd6;
+  --accent-2: #2a7bd6;
+  --ok: #2bb673;
+  --warn: #f7b500;
+  --err: #e3516e;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial;
+  background: radial-gradient(
+      1200px 600px at -10% -10%,
+      #1c1640 0%,
+      transparent 60%
+    ),
+    radial-gradient(1000px 500px at 110% 10%, #0f3b66 0%, transparent 55%),
+    linear-gradient(180deg, #0b0a16, #0c0a18 60%, #090817);
+  color: var(--text);
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--stroke);
+  backdrop-filter: saturate(130%) blur(6px);
+  background: linear-gradient(
+    180deg,
+    rgba(20, 17, 37, 0.9),
+    rgba(17, 16, 42, 0.6)
+  );
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.topbar h1 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+.stats {
+  display: flex;
+  gap: 12px;
+}
+.kpi {
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-width: 110px;
+}
+.kpi-label {
+  font-size: 11px;
+  color: var(--muted);
+}
+.kpi-val {
+  font: 600 18px/1.2 ui-sans-serif;
+}
+.grid {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  grid-template-columns: 1.1fr 2fr;
+  align-items: start;
+}
+.card {
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 0 0 1px rgba(108, 77, 214, 0.05),
+    0 10px 30px rgba(42, 123, 214, 0.06);
+}
+h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  color: #dcd9ff;
+}
+.form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.col label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+input,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--stroke);
+  background: #0f0c24;
+  color: var(--text);
+  outline: none;
+}
+input:focus,
+select:focus {
+  border-color: #3c79ff;
+  box-shadow: 0 0 0 3px rgba(60, 121, 255, 0.18);
+}
+.row {
+  grid-column: 1/-1;
+  display: flex;
+  gap: 8px;
+}
+button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--stroke);
+  background: linear-gradient(180deg, #251e66, #1a1652);
+  color: var(--text);
+  cursor: pointer;
+}
+button:hover {
+  filter: brightness(1.06);
+}
+button:active {
+  transform: translateY(1px);
+}
+#crear {
+  background: linear-gradient(180deg, #6c4dd6, #4b34b0);
+}
+#actualizar {
+  background: linear-gradient(180deg, #2a7bd6, #1e5aa0);
+}
+#limpiar {
+  background: linear-gradient(180deg, #2b2d42, #1e2138);
+}
+#msg {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  display: none;
+  border: 1px solid var(--stroke);
+}
+#msg.ok {
+  background: #10281c;
+  border-color: #1e5637;
+}
+#msg.error {
+  background: #2b1320;
+  border-color: #6c2141;
+}
+.toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.table-wrap {
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0f0d22;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead th {
+  background: #15123b;
+  color: #c8c6f2;
+  text-align: left;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  padding: 10px;
+}
+tbody td {
+  padding: 10px;
+  border-top: 1px solid #211d46;
+}
+td:last-child {
+  white-space: nowrap;
+  width: 1%;
+}
+.tbtn {
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--stroke);
+  background: #1a1643;
+  color: var(--text);
+  cursor: pointer;
+}
+.tbtn:hover {
+  filter: brightness(1.08);
+}
+.foot {
+  text-align: center;
+  color: var(--muted);
+  padding: 16px;
+}
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
