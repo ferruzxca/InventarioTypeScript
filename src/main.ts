@@ -1,4 +1,5 @@
 type Id = number;
+
 interface Item {
   id: Id;
   nombre: string;
